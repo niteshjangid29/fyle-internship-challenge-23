@@ -1,8 +1,13 @@
-<div *ngIf="!loadingUser && userProfile === null">No User Found</div>
+<div
+  *ngIf="!loadingUser && userProfile === null"
+  class="text-red-500 font-bold text-xl underline md:text-2xl text-center mt-6"
+>
+  No User Found
+</div>
 
 <div *ngIf="loadingUser" class="flex flex-col gap-4">
   <div
-    class="flex p-8 gap-8 place-items-center border border-gray-200 shadow animate-pulse"
+    class="flex p-8 gap-8 place-items-center border border-gray-200 shadow animate-pulse bg-white"
   >
     <img
       src=""
@@ -11,20 +16,20 @@
     />
 
     <div class="flex w-full flex-col gap-4">
-      <div class="w-96 h-8 bg-gray-300 animate-pulse rounded"></div>
-      <div class="w-1/2 h-5 bg-gray-300 animate-pulse rounded"></div>
-      <div class="w-1/2 h-5 bg-gray-300 animate-pulse rounded"></div>
-      <div class="w-1/2 h-5 bg-gray-300 animate-pulse rounded"></div>
+      <div class="w-3/4 md:w-96 h-8 bg-gray-300 animate-pulse rounded"></div>
+      <div class="w-full md:w-1/2 h-5 bg-gray-300 animate-pulse rounded"></div>
+      <div class="w-full md:w-1/2 h-5 bg-gray-300 animate-pulse rounded"></div>
+      <div class="w-full md:w-1/2 h-5 bg-gray-300 animate-pulse rounded"></div>
     </div>
   </div>
 
-  <div class="w-1/2 h-8 bg-gray-200 animate-pulse rounded"></div>
+  <div class="w-3/4 md:w-1/2 h-8 bg-gray-200 animate-pulse rounded"></div>
 </div>
 
 <!-- <div *ngIf="loadingUser">Loading...</div> -->
 <div *ngIf="userProfile" class="flex flex-col gap-4">
   <div
-    class="flex flex-col md:flex-row p-8 gap-8 place-items-center border-gray-200 shadow"
+    class="flex flex-col md:flex-row p-8 gap-8 place-items-center border-gray-200 shadow bg-white"
   >
     <img
       class="w-36 h-36 object-contain rounded-full border outline outline-2 outline-gray-300 outline-offset-2"
@@ -55,7 +60,8 @@
   >
     <a
       [href]="userProfile.html_url"
-      class="border border-gray-300 hover:border-gray-800 text-black hover:bg-orange-500 hover:text-white hover:invert p-1 rounded"
+      title="View Profile"
+      class="border border-gray-300 bg-white hover:border-gray-800 text-black hover:bg-orange-500 hover:invert p-1 rounded"
       target="_blank"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="h-4" viewBox="0 0 640 512">
@@ -66,7 +72,7 @@
     </a>
     {{ userProfile.html_url }}
     <button
-      class="border border-gray-300 text-sm md:text-base hover:border-gray-300 text-black hover:bg-blue-500 hover:text-white px-2 rounded"
+      class="border border-gray-300 bg-white text-sm md:text-base hover:border-gray-300 text-black hover:bg-blue-500 hover:text-white px-2 rounded"
       (click)="copyToClipboard()"
       [title]="userProfile.html_url"
     >
