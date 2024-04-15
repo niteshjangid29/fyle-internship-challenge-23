@@ -1,0 +1,60 @@
+<div *ngIf="loadingRepos" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+  <div class="flex flex-col gap-4 p-6 border rounded shadow">
+    <div class="h-10 w-1/2 bg-gray-200 animate-pulse rounded"></div>
+    <div class="h-6 w-3/4 bg-gray-200 animate-pulse rounded"></div>
+    <div class="flex gap-4">
+      <div class="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+      <div class="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+      <div class="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-4 p-6 border rounded shadow">
+    <div class="h-10 w-1/2 bg-gray-200 animate-pulse rounded"></div>
+    <div class="h-6 w-3/4 bg-gray-200 animate-pulse rounded"></div>
+    <div class="flex gap-4">
+      <div class="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+      <div class="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+      <div class="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-4 p-6 border rounded shadow">
+    <div class="h-10 w-1/2 bg-gray-20instagram 0 animate-pulse rounded"></div>
+    <div class="h-6 w-3/4 bg-gray-200 animate-pulse rounded"></div>
+    <div class="flex gap-4">
+      <div class="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+      <div class="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+      <div class="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-4 p-6 border rounded shadow">
+    <div class="h-10 w-1/2 bg-gray-200 animate-pulse rounded"></div>
+    <div class="h-6 w-3/4 bg-gray-200 animate-pulse rounded"></div>
+    <div class="flex gap-4">
+      <div class="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+      <div class="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+      <div class="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col gap-4">
+  <div
+    *ngIf="!loadingRepos && repositories?.length === 0"
+    class="text-blue-500 font-bold text-xl text-center my-6"
+  >
+    No Public Repositories Found
+  </div>
+  <div
+    *ngIf="repositories?.length"
+    class="text-blue-500 font-bold text-xl text-center my-6"
+  >
+    Your Repositories
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
+    <app-repo-card
+      *ngFor="let repo of repositories"
+      [repo]="repo"
+    ></app-repo-card>
+  </div>
+</div>

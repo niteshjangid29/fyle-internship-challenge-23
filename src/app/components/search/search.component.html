@@ -1,0 +1,17 @@
+<div class="flex gap-2 md:gap-4 justify-center">
+  <input
+    type="text"
+    placeholder="Enter GitHub Username"
+    name=""
+    id=""
+    [(ngModel)]="username"
+    class="border rounded py-2 px-4 max-w-md w-full"
+    (keydown.enter)="onSearch()"
+  />
+  <button
+    (click)="onSearch()"
+    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+  >
+    Search
+  </button>
+</div>

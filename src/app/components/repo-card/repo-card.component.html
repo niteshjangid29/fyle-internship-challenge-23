@@ -1,0 +1,20 @@
+<div
+  *ngIf="repo"
+  class="flex h-full flex-col gap-2 border shadow rounded p-4 md:p-6"
+>
+  <a
+    [href]="repo.html_url"
+    target="_blank"
+    class="text-lg md:text-xl xl:text-2xl font-medium text-gray-600 hover:text-blue-500"
+  >
+    {{ repo.name }}
+  </a>
+  <p class="text-gray-500">{{ repo.description }}</p>
+  <div class="flex flex-wrap gap-2 text-xs text-white">
+    <span
+      *ngFor="let topic of repo.topics"
+      class="bg-blue-500 flex px-2 py-1 rounded"
+      >{{ topic }}</span
+    >
+  </div>
+</div>

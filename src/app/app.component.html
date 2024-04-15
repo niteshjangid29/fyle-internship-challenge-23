@@ -1,5 +1,22 @@
-<div class="grid h-screen place-items-center">
-  <div class="font-bold text-3xl">
-    Fyle Internship Challenge
-  </div>
+<div
+  class="container m-auto flex flex-col justify-center gap-4 min-h-screen px-3 md:px-6 py-12"
+>
+  <app-search (searchUser)="onUserSearch($event)"></app-search>
+  <app-profile
+    [userProfile]="userProfile"
+    [loadingUser]="loadingUser"
+  ></app-profile>
+
+  <app-repos
+    [repositories]="repositories"
+    [loadingRepos]="loadingRepos"
+  ></app-repos>
+  <app-pagination
+    *ngIf="totalRepositories > 0"
+    [totalRepos]="totalRepositories"
+    [perPage]="perPage"
+    [currentPage]="page"
+    (pageChanged)="onPageChanged($event)"
+    (perPageChanged)="onPerPageChanged($event)"
+  ></app-pagination>
 </div>
